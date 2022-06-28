@@ -23,13 +23,28 @@ export default function Movie({ movie }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  const resp = await fetch("https://ghibliapi.herokuapp.com/films");
+  const movies = await resp.json();
+
+  movies.length = 5;
+
+  const paths = movies.map((movie) => ({
+    params: {
+      id: movie.id,
+    },
+  }));
+  return {
+    fallback: false,
+    paths,
+  };
+}
+
+export async function getStaticProps(context) {
   const resp = await fetch("https://ghibliapi.herokuapp.com/films");
   const movies = await resp.json();
 
   const selectedMovie = movies.find((movie) => movie.id === context.params.id);
-  console.log(context.params.id);
-  console.log(selectedMovie.id);
 
   return {
     props: {
