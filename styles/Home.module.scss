@@ -50,14 +50,26 @@
             }
 
             .more_button {
-                width: max-content;
+                display: flex;
+                margin-top: 2rem;
+    
                 div {
-                    margin-top: 2rem;
-                    padding: .2rem 2rem;
+                    cursor: pointer;
                     border-top: 1px solid black;
                     border-bottom: 1px solid black;
+                    border-left: 1px solid transparent;
+                    border-right: 1px solid transparent;
                     width: max-content;
-                    cursor: pointer;
+                    padding: 0 2rem;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+
+                    &:hover {
+                        border-left: 1px solid black;
+                        border-right: 1px solid black;
+                        -webkit-box-shadow: 5px 5px 11px 4px rgba(0,0,0,0.13); 
+                        box-shadow: 5px 5px 11px 4px rgba(0,0,0,0.13);
+                    }
                 }
             }
         }
@@ -146,7 +158,7 @@
                 }
 
             }
-            
+
             .info_container {
                 padding-top: 0;
                 text-align: center;

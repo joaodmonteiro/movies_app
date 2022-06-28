@@ -5,7 +5,7 @@ export default function Movie({ movie }) {
   return (
     <div className={styles.container}>
       <div className={styles.banner_container}>
-        <img src={movie.movie_banner} alt="" />
+        <img src={movie.movie_banner} alt={`${movie.title} banner`} />
       </div>
       <div className={styles.info}>
         <h1 className={styles.title}>{movie.title}</h1>

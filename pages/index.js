@@ -19,11 +19,11 @@ export default function Home({ movies }) {
           <div className={styles.info_container}>
             <div className={styles.title}>{movie.title}</div>
             <div className={styles.description}>{movie.description}</div>
-            <a className={styles.more_button}>
-              <Link href={`/movies/${movie.id}`}>
-                <div>SEE MORE</div>
-              </Link>
-            </a>
+            <Link href={`/movies/${movie.id}`}>
+              <div className={styles.more_button}>
+                <div>MORE</div>
+              </div>
+            </Link>
           </div>
         </div>
       ))}
