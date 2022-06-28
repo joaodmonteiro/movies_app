@@ -12,14 +12,14 @@ export default function Home({ movies }) {
       {movies.map((movie) => (
         <div className={styles.movie_container} key={movie.id}>
           <div className={styles.image_container}>
-            <img src={movie.image} />
+            <img src={movie.image} alt={`${movie.title} cover`} />
           </div>
           <div className={styles.info_container}>
             <div className={styles.title}>{movie.title}</div>
             <div className={styles.description}>{movie.description}</div>
             <Link href={`/movies/${movie.id}`}>
               <div className={styles.more_button}>
-                <div>MORE</div>
+                <div>SEE MORE</div>
               </div>
             </Link>
           </div>
